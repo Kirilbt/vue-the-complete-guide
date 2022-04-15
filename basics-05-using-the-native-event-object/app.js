@@ -2,8 +2,28 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: ''
+      name: '',
+      lastname: '',
     };
+  },
+  watch: {
+    counter(value) {
+      if (value > 50) {
+        const that = this;
+        setTimeout(() => {
+          that.counter = 0;
+        }, 2000);
+        that.counter = 0;
+      }
+    }
+  },
+  computed: {
+    fullname() {
+      if (this.name === '' || this.lastname === '') {
+        return '';
+      }
+      return this.name + ' ' + this.lastname
+    }
   },
   methods: {
     setName(event) {
