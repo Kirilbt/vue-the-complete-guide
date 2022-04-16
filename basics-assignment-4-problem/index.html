@@ -21,7 +21,7 @@
       <!-- The entered class should be added to the below paragraph -->
       <input type="text" v-model="user"/>
       <!-- (available classes: "user1", "user2") -->
-      <p :class="[paragraphColor, paragraphVisible]">
+      <p :class="paragraphClasses">
         Style me!
       </p>
       <button @click="toggle()">Toggle Paragraph</button>

@@ -7,24 +7,12 @@ const app = Vue.createApp({
     }
   },
   computed: {
-    paragraphColor() {
-      if (this.user === 'user1') {
-        console.log('user1');
-        return { user1: this.user }
-      } else if (this.user === 'user2') {
-        console.log('user2');
-        return { user2: this.user }
-      } else {
-        console.log('Not a correct input');
-      }
-    },
-    paragraphVisible() {
-      if (this.visible === false) {
-        console.log('hidden');
-        return 'hidden'
-      } else {
-        console.log('visible');
-        return 'visible'
+    paragraphClasses() {
+      return {
+        user1: this.user === 'user1',
+        user2: this.user === 'user2',
+        visible: this.visible,
+        hidden: !this.visible
       }
     }
   },
