@@ -3,6 +3,7 @@ const app = Vue.createApp({
     return {
       enteredGoalValue: '',
       goals: [],
+      // myDetails: {name: 'Kiril', age: 31 },
     };
   },
   methods: {
