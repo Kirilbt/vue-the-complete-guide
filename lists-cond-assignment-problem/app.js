@@ -7,6 +7,11 @@ const app = Vue.createApp({
       hideBtn: 'Hide'
     };
   },
+  computed: {
+    btnCaption() {
+      return this.visible ? 'Hide' : 'Show'
+    }
+  },
   methods: {
     addTask() {
       this.tasks.push(this.enteredTask)
@@ -16,11 +21,6 @@ const app = Vue.createApp({
     },
     hideTasks() {
       this.visible = !this.visible
-      if (this.visible === true) {
-        this.hideBtn = 'Hide'
-      } else {
-        this.hideBtn = 'Show'
-      }
     }
   }
 });
