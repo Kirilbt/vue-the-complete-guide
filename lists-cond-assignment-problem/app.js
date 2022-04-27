@@ -4,7 +4,6 @@ const app = Vue.createApp({
       enteredTask: '',
       tasks: [],
       visible: true,
-      hideBtn: 'Hide'
     };
   },
   computed: {
