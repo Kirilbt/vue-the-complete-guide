@@ -22,7 +22,8 @@ header {
   max-width: 40rem;
 }
 
-#app {
+#app,
+#app2 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin: 3rem auto;
   border-radius: 10px;
@@ -32,14 +33,16 @@ header {
   max-width: 40rem;
 }
 
-#app h2 {
+#app h2,
+#app2 h2 {
   font-size: 2rem;
   border-bottom: 4px solid #ccc;
   color: #4fc08d;
   margin: 0 0 1rem 0;
 }
 
-#app p {
+#app p,
+#app2 p {
   font-size: 1.25rem;
   font-weight: bold;
   border: 1px solid #4fc08d;
@@ -49,12 +52,14 @@ header {
   border-radius: 25px;
 }
 
-#app input {
+#app input,
+#app2 input {
   font: inherit;
   border: 1px solid #ccc;
 }
 
-#app input:focus {
+#app input:focus,
+#app2 input:focus {
   outline: none;
   border-color: #1b995e;
   background-color: #d7fdeb;
