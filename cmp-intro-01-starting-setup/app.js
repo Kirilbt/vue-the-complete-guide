@@ -1,7 +1,6 @@
 const app = Vue.createApp({
   data() {
     return {
-      isVisible: false,
       friends : [
         {
           id: 'manuel',
@@ -16,6 +15,30 @@ const app = Vue.createApp({
           email: 'julie@localhost.com'
         },
       ]
+    }
+  },
+})
+
+app.component('friend-contact', {
+  template:`
+    <li>
+      <h2>{{ friend.name }}</h2>
+      <button @click="toggleDetails">{{ isVisible ? 'Hide' : 'Show' }} Details</button>
+      <ul v-if="isVisible">
+        <li><strong>Phone:</strong> {{ friend.phone }}</li>
+        <li><strong>Email:</strong> {{ friend.email }}</li>
+      </ul>
+    </li>
+  `,
+  data() {
+    return {
+      isVisible: false,
+      friend: {
+        id: 'manuel',
+        name: 'Manuel Lorenz',
+        phone: '01234 5678 991',
+        email: 'manuel@localhost.com'
+      },
     }
   },
   methods: {
