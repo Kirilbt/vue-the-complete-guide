@@ -35,6 +35,17 @@
         default: '0',
       }
     },
+    emits: ['toggle-favorite'],
+    // emits: {
+    //   'toggle-favorite': (id) => {
+    //     if (id) {
+    //       return true
+    //     } else {
+    //       console.warn('ID is missing!')
+    //       return false
+    //     }
+    //   }
+    // }
     data() {
       return {
         isVisible: false,
