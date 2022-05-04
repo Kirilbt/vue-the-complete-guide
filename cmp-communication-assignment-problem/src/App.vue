@@ -24,23 +24,22 @@
           age: age,
         }
         this.users.unshift(newUser)
-      },
+      }
     }
   }
 </script>
 
 <template>
-  <user-data @add-user="addUser"></user-data>
+  <add-user-data @add-user="addUser"></add-user-data>
   <ul>
-    <active-user
+    <active-users
       v-for="user in users"
       :key="user.id"
       :id="user.id"
       :username="user.username"
       :age="user.age"
-    ></active-user>
+    ></active-users>
   </ul>
-
 </template>
 
 <style>
