@@ -1,12 +1,32 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+  export default {
+    data() {
+      return {
+        storedResources: [
+          {
+            id: 'official-guide',
+            title: 'Official Guide',
+            description: 'The official Vue.js documentation.',
+            link: 'http://vuejs.com'
+          },
+          {
+            id: 'google',
+            title: 'Google',
+            description: 'Learn to google.',
+            link: 'http://google.com'
+          },
+        ]
+      }
+    }
+  }
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <ul v-for="resources in storedResources">
+    <li>
+      <h2> {{ resources.title }} </h2>
+    </li>
+  </ul>
 </template>
 
 <style>
