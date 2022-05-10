@@ -1,21 +1,13 @@
 <template>
-  <ul>
-    <learning-resource
-      v-for="res in storedResources"
-      :key="res.id"
-      :title="res.title"
-      :description="res.description"
-      :link="res.link"
-    ></learning-resource>
-  </ul>
+  <stored-resources :resources="storedResources"></stored-resources>
 </template>
 
 <script>
-  import LearningResource from "./components/learning-resources/LearningResource.vue"
+  import StoredResources from "./components/learning-resources/StoredResources.vue"
 
   export default {
     components: {
-      LearningResource
+      StoredResources
     },
     data() {
       return {
@@ -24,7 +16,7 @@
             id: 'official-guide',
             title: 'Official Guide',
             description: 'The official Vue.js documentation.',
-            link: 'http://vuejs.com'
+            link: 'http://vuejs.org'
           },
           {
             id: 'google',
@@ -39,11 +31,17 @@
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  body {
+    margin: 0;
+  }
 </style>
