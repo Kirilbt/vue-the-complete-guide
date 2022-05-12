@@ -16,7 +16,7 @@
 <script>
 import BaseButton from '../UI/BaseButton.vue';
   export default {
-    props: ["title", "description", "link"],
+    props: ['title', 'description', 'link'],
     components: { BaseButton }
 }
 </script>
