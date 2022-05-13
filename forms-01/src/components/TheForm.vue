@@ -48,7 +48,7 @@
       </div>
     </div>
     <div class="form-control">
-      <RatingControl></RatingControl>
+      <RatingControl v-model="rating"></RatingControl>
     </div>
     <div class="form-control">
       <input type="checkbox" id="confirm-terms" name="confirm-terms" v-model="confirm">
@@ -63,47 +63,51 @@
 <script>
 import RatingControl from "./RatingControl.vue";
 export default {
-    data() {
-        return {
-            userName: "",
-            userAge: null,
-            referrer: "google",
-            interest: [],
-            how: null,
-            confirm: false,
-            userNameValidity: "pending"
-        };
+  data() {
+    return {
+      userName: "",
+      userAge: null,
+      referrer: "google",
+      interest: [],
+      how: null,
+      confirm: false,
+      userNameValidity: "pending",
+      rating: null
+    };
+  },
+  methods: {
+    submitForm() {
+      console.log("Username:" + this.userName);
+      this.userName = "";
+      console.log("User age:");
+      console.log(this.userAge);
+      console.log(31);
+      this.userAge = null;
+      console.log("Referrer: " + this.referrer);
+      this.referrer = "google";
+      console.log("Checkboxes");
+      console.log(this.interest);
+      this.interest = [];
+      console.log("Radio buttons");
+      console.log(this.how);
+      this.how = null;
+      console.log("Confirm?");
+      console.log(this.confirm);
+      this.confirm = false;
+      console.log('Rating');
+      console.log(this.rating);
+      this.rating = null
     },
-    methods: {
-        submitForm() {
-            console.log("Username:" + this.userName);
-            this.userName = "";
-            console.log("User age:");
-            console.log(this.userAge);
-            console.log(31);
-            this.userAge = null;
-            console.log("Referrer: " + this.referrer);
-            this.referrer = "google";
-            console.log("Checkboxes");
-            console.log(this.interest);
-            this.interest = [];
-            console.log("Radio buttons");
-            console.log(this.how);
-            this.how = null;
-            console.log("Confirm?");
-            console.log(this.confirm);
-            this.confirm = false;
-        },
-        validateInput() {
-            if (this.userName === "") {
-                this.userNameValidity = "invalid";
-            }
-            else {
-                this.userNameValidity = "valid";
-            }
-        }
-    },
-    components: { RatingControl }
+    validateInput() {
+      if (this.userName === "") {
+          this.userNameValidity = "invalid";
+      }
+      else {
+          this.userNameValidity = "valid";
+      }
+    }
+  },
+  components: { RatingControl }
 }
 </script>
 
