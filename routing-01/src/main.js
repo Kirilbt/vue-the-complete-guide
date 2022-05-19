@@ -55,10 +55,10 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
-router.afterEach((to, from, next) => {
+router.afterEach((to, from) => {
+  // Sending analytics
   console.log('Global afterEach');
   console.log(to, from);
-  next()
 })
 
 const app = createApp(App)
