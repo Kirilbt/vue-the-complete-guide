@@ -35,12 +35,17 @@ const router = createRouter({
     { path: '/:notFound(.*)', component: NotFound }
   ],
   linkActiveClass: 'active',
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(_, _2, savedPosition) {
+    // to, from, savedPosition. We use underscore to indicate that we have to take these arguments in order to reach the 3rd one
     if (savedPosition) {
       return savedPosition
     }
     return { left: 0, top: 0 }
   }
+})
+
+router.beforeEach((to, from, next) => {
+  next()
 })
 
 const app = createApp(App)
