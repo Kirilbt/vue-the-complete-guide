@@ -34,7 +34,13 @@ const router = createRouter({
     // { path: '/teams/:teamId', component: TeamMembers, props: true }, // Standalone route
     { path: '/:notFound(.*)', component: NotFound }
   ],
-  linkActiveClass: 'active'
+  linkActiveClass: 'active',
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    }
+    return { left: 0, top: 0 }
+  }
 })
 
 const app = createApp(App)
