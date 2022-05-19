@@ -18,6 +18,11 @@ export default {
       // do something
       this.$router.push('/teams')
     }
+  },
+  beforeRouteEnter(to, from, next) {
+    console.log('UserList CMP beforeRouteEnter')
+    console.log(to, from)
+    next()
   }
 };
 </script>

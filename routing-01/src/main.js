@@ -29,6 +29,11 @@ const router = createRouter({
       components: {
         default: UsersList,
         footer: UsersFooter
+      },
+      beforeEnter(to, from, next) {
+        console.log('users beforeEnter');
+        console.log(to, from);
+        next()
       }
     },
     // { path: '/teams/:teamId', component: TeamMembers, props: true }, // Standalone route
@@ -45,6 +50,8 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  console.log('Global beforeEach');
+  console.log(to, from);
   next()
 })
 
