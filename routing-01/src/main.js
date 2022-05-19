@@ -55,6 +55,12 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
+router.afterEach((to, from, next) => {
+  console.log('Global afterEach');
+  console.log(to, from);
+  next()
+})
+
 const app = createApp(App)
 
 app.use(router)
