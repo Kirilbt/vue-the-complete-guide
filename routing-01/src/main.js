@@ -16,7 +16,7 @@ const router = createRouter({
       children: [
         { path: ':teamId', component: TeamMembers, props: true }
       ]
-    },
+    }, // nested route / children
     { path: '/users', component: UsersList },
     // { path: '/teams/:teamId', component: TeamMembers, props: true }, // Standalone route
     { path: '/:notFound(.*)', component: NotFound }
