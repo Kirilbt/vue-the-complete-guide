@@ -1,5 +1,10 @@
 <template>
-  <div class="container">
+  <router-view v-slot="slotProps">
+    <transition name="route" mode="out-in">
+      <component :is="slotProps.Component"></component>
+    </transition>
+  </router-view>
+  <!-- <div class="container">
     <users-list></users-list>
   </div>
   <div class="container">
@@ -34,7 +39,7 @@
   </base-modal>
   <div class="container">
     <button @click="showDialog">Show Dialog</button>
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -193,6 +198,14 @@ button:active {
 .fade-button-enter-to,
 .fade-button-leave-to {
   opacity: 1;
+}
+
+.route-enter-active {
+  animation: slide-scale .4s ease-out;
+}
+
+.route-leave-active {
+  animation: slide-scale .4s ease-in;
 }
 
 
