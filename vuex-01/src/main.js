@@ -31,6 +31,9 @@ const counterModule = {
     }
   },
   getters: {
+    testAuth(state, getters, rootState, rootGetters) {
+      return rootState.isLoggedIn
+    },
     finalCounter(state) {
       return state.counter * 2
     },
