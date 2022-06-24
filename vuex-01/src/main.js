@@ -4,6 +4,7 @@ import { createStore } from "vuex"
 import App from './App.vue'
 
 const counterModule = {
+  namespaced: true,
   state() {
     return {
       counter: 0,
@@ -28,7 +29,8 @@ const counterModule = {
       setTimeout( () => {
         context.commit('increase', payload)
       }, 2000)
-    }
+    },
+    login() {}
   },
   getters: {
     testAuth(state, getters, rootState, rootGetters) {

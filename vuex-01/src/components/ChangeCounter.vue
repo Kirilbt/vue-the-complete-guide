@@ -11,7 +11,7 @@
       //   this.$store.dispatch('increment')
       // }
       // ...mapActions(['increment', 'increase'])
-      ...mapActions({
+      ...mapActions('numbers', {
         inc: 'increment',
         inc10: 'increase'
       })
