@@ -7,7 +7,8 @@ import BaseBadge from './components/ui/BaseBadge.vue'
 
 const app = createApp(App)
 
-app.use(router, store)
+app.use(router)
+app.use(store)
 
 app.component('base-badge', BaseBadge)
 
